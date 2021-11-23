@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+    <header>
+        {% block header %}
+
+                <div class="header_logo">
+                    <a href="{{ path('home_page') }}">RazDva</a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="{{ path('home_page') }}">Главная</a></li>
+                        <li><a href="{{ path('show_categories') }}">Мои категории</a></li>
+                        <li><a href="{{ path('my_video') }}">Мои видео</a></li>
+                    </ul>
+                </nav>
+
+
+
+                <button class="green">Войти</button>
+
+
+        {% endblock %}
+    </header>
+    <div class="center_block_main">
+        <aside>
+            {% block sidebar %}
+                <ul>
+                    <li>
+                        <a href="{{ path('add_video') }}">Добавить видео</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('add_category') }}">Добавить категорию</a>
+                    </li>
+                </ul>
+            {% endblock %}
+        </aside>
+        <main>
+            {% block body %}{% endblock %}
+
+            {% block main_cont %}{% endblock %}
+        </main>
+    </div>
+        {% block javascripts %}{% endblock %}
+    </body>
+    <footer>FOOTER</footer>
+</html>
+

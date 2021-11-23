@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello VideoController!{% endblock %}
+
+{% block main_cont %}
+<h1>Курс по PHP:</h1>
+    <div class="grid">
+    {% for video in videos %}
+        <div class="grid_item">
+        <h4><a href="{{ path('show_video', {'youtube_id': video.youtubeId}) }}">{{ video.title }}</a></h4>
+        <iframe width="350" height="197" src="https://youtube.com/embed/{{ video.youtubeId }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; pictures-in-picture" allowfullscreen></iframe>
+
+        </div>
+
+
+    {% endfor %}
+    </div>
+{% endblock %}

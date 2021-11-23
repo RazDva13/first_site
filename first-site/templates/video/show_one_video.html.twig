@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block main_cont %}
+    <h2>{{ video.title}}</h2>
+    <div class="grid">
+            <div class="grid_item">
+                <iframe width="560" height="315" src="https://youtube.com/embed/{{ video.youtubeId }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; pictures-in-picture" allowfullscreen></iframe>
+
+            </div>
+    </div>
+{% endblock %}
